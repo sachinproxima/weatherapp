@@ -72,14 +72,19 @@ try{
     console.log(data);
 
 
-    const { main, name, weather, wind, sys, dt } = data;
+   const { main, name, weather, wind, sys, dt } = data;
 
 
 
+    let kelvinValue = `${main.temp.toFixed()}`; 
+    let celsiusValue = (kelvinValue - 273.15).toFixed();
 
+
+
+tempr.innerHTML=`${celsiusValue}&#176c`
     
 
-tempr.innerHTML=`${main.temp.toFixed()}&#176`
+
 cityName.innerHTML=`${name}, ${getCountryName(sys.country)}`
 
 
